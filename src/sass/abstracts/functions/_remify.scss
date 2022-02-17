@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+// Px to Rem Function
+@function rem($pixels, $context: 16){
+	@return #{math.div($pixels, $context)}rem;
+}

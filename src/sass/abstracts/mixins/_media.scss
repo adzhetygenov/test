@@ -1,0 +1,19 @@
+@use 'sass:map';
+
+@use '../variables' as mq;
+
+/* ### StartOf: Media Queries ### */
+@mixin larger-than($breakpoint){
+	@media (min-width: map.get(mq.$breakpoints, $breakpoint)) {
+		@content;
+	}
+}
+
+@mixin smaller-than($breakpoint){
+	@if $breakpoint == xs or $breakpoint == 'xs' {
+		@error 'Breakpoint at max-width cannot be less than 0';
+	}
+	@media (max-width: map.get(mq.$breakpoints, $breakpoint)) {
+		@content;
+	}
+}

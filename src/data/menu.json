@@ -1,0 +1,35 @@
+{ 
+	"list": [
+		{
+			"title": "Woensdag 12/01",
+			"mainDish": "Salade met Serrano",
+			"sideDish": "Steak Tartaar"
+		},
+
+		{
+			"title": "Donderdag 13/01",
+			"mainDish": "Toast Roquefort",
+			"sideDish": "Penne met Kip en Prei"
+		},
+		{
+			"title": "Donderdag 13/01",
+			"mainDish": "Toast Roquefort",
+			"sideDish": "Penne met Kip en Prei"
+		},
+		{
+			"title": "Donderdag 13/01",
+			"mainDish": "Toast Roquefort",
+			"sideDish": "Penne met Kip en Prei"
+		},
+		{
+			"title": "Donderdag 13/01",
+			"mainDish": "Toast Roquefort",
+			"sideDish": "Penne met Kip en Prei"
+		}
+	],
+
+	"images": [
+		"img/rest1.jpg",
+		"img/rest2.jpg"
+	]
+}

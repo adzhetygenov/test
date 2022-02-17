@@ -1,0 +1,183 @@
+extends /core/layout/_Default
+
+block content
+	//- header
+	header.header
+
+		.header__container
+			//- Navigation
+			nav.header__nav
+
+				.logo.header__logo
+					a.logo__link(href='/')
+						img.logo__img(src=nav.logo alt=nav.alt)
+
+				ul.header__list
+					each item in nav.list
+						li.header__item: a.header__link(href='') #{item}
+
+					li.header__item.header__item_socials
+						| We are in social media:
+						ul.header__socials.socials
+							each item in hero.list
+								li.header__item.socials__item: a.socials__link(href='') #{item}
+
+				
+				.header__phone
+					a.header__link.header__link_phone(href=`tel: ${nav.phone}`) #{nav.phone}
+
+				button.header__mobile-btn
+					span
+					span
+					span
+
+			//- Hero
+			section.hero
+				header.hero__heading
+					.hero__kicker #{hero.kicker}
+					h1.hero__title #{hero.title}
+
+				footer.hero__footer
+					button.btn.hero__btn(data-custom-open='js-modal') #{hero.btn}
+
+					ul.hero__socials.socials
+						each item in hero.list
+							li.hero__item.socials__item: a.hero__link.socials__link(href='') #{item}
+	
+	//- Menu
+	section.menu
+		.menu__container
+			.menu__grid
+
+				ul.menu__list
+					each item in menu.list
+						li.menu__item
+							h3.menu__title #{item.title}
+							.menu__description
+								span.menu__side-dish #{item.sideDish}
+								span.menu__main-dish #{item.mainDish}
+
+
+				.menu__media
+					each image in menu.images 
+						figure.menu__figure
+							img.menu__img(src=image alt="Restraunt")
+
+	//- Feedback
+	section.feedback
+		.feedback__container
+			.swiper.js-slider-feedback
+				.swiper-wrapper
+					each item in feedback.list
+						.swiper-slide
+							.feedback__item
+								h3.feedback__title #{item.title}
+								p.feedback__text #{item.text}
+
+								.feedback__name #{item.name}
+				.feedback__controls.controls
+					button.controls__item.controls__item_prev.feedback__prev
+					button.controls__item.controls__item_next.feedback__next
+					
+	//- Gallery
+	section.gallery
+		.gallery__container
+			each item in gallery.list
+				article.gallery__item 
+					header.gallery__heading
+						h3.gallery__title #{item.title}
+						p.gallery__text #{item.text}
+
+					figure.gallery__media
+						img.gallery__img(src=item.img alt='Gallery Dish')
+
+	//- Review
+	section.review
+		.review__container
+			header.review__heading
+				.review__description
+					h2.review__title #{review.title}
+					p.review__text #{review.text}
+
+				.review__controls.controls
+					button.controls__item.controls__item_prev.review__prev
+					button.controls__item.controls__item_next.review__next
+
+		.swiper.js-slider-review
+			.swiper-wrapper
+				each item in review.slides
+					.swiper-slide
+						figure.review__media
+							img.review__img(src=item)
+
+	//- footer
+	footer.footer
+		.footer__container
+			.footer__grid
+				.footer__contacts
+					h2.footer__title #{footer.titles[0]}
+
+					ul.footer__list
+
+						each contact in footer.contacts
+							li(class=`footer__item footer__item_${contact.mod}`)
+								span #{contact.title}
+									if contact.type
+										a(href=contact.type ? `${contact.type}:${contact.info}` : ``).footer__info #{contact.info}
+									else
+										.footer__info #{contact.info}
+
+				.footer__feedback
+
+					h2.footer__title #{footer.titles[1]}
+					form.footer__form
+
+						each input in footer.inputs
+							if input.type == 'textarea'
+								label.footer__label.footer__label_wide
+									.footer__label-title #{input.title}
+
+									textarea.footer__textarea(placeholder=input.placeholder)
+							else
+								label.footer__label
+									.footer__label-title #{input.title}
+									input.footer__input(type=input.type placeholder=input.placeholder required)
+
+						button.btn.footer__btn #{footer.btn}
+
+				.footer__map
+					iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.119350128393!2d112.69475141477534!3d-7.340491894702695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fc99f4634c37%3A0x42c2df445fc28e50!2zSmwuIFJheWEgTWFzdHJpcCwgS290YSBTQlksIEphd2EgVGltdXIsINCY0L3QtNC-0L3QtdC30LjRjw!5e0!3m2!1sru!2sru!4v1645017185563!5m2!1sru!2sru" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy")
+
+				.footer__bottom
+					.logo.footer__logo
+						a.logo__link(href='/')
+							img.logo__img(src=footer.logo alt="Logotype")
+
+					ul.footer__socials.socials
+						each item in footer.socials
+							li.footer__social.socials__item: a.footer__link.socials__link.socials__link_dark(href='') #{item}
+
+	.modal.micromodal-slide#js-modal(aria-hidden='true')
+		.modal__overlay(data-custom-close)
+			.modal__container
+				
+				form.modal__form#modal-form
+					label.modal__label
+						.modal__title Имя
+						input.modal__input.js-validate(name='name' type='text' placeholder='Ваше имя')
+
+					label.modal__label
+						.modal__title Фамилия
+						input.modal__input.js-validate(name='second_name' type='text' placeholder='Ваша фамилия')
+
+					label.modal__label
+						.modal__title Сообщение
+						textarea.modal__textarea.js-validate(name='message' placeholder='Введите сообщение')
+
+
+					button.btn.modal__btn Отправить
+					buttom.modal__close(data-custom-close) &times
+
+				
+				
+

@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+/* ### StartOf: Color utilities ### */
+@each $color, $value in $colors {
+	.bg-#{$color} {
+		background-color: var(--clr-#{$color});
+	}
+
+	.text-#{$color} {
+		color: var(--clr-#{$color});
+	}
+}
+/* ### EndOf: Color utilities ### */

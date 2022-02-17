@@ -1,0 +1,60 @@
+{
+	"titles": [
+		"Contacts",
+		"have any questions?"
+	],
+
+	"contacts": [
+		{
+			"title": "Phone Number",
+			"mod": "phone",
+			"type": "tel",
+			"info": "+32 9 282 57 25"
+
+		},
+		{
+			"title": "Email",
+			"mod": "mail",
+			"type": "mailto",
+			"info": "info@email.com"
+
+		},
+		{
+			"title": "Opening Hours",
+			"mod": "schedule",
+			"info": "Everyday from 6 AM - 9 PM"
+
+		},
+		{
+			"title": "Map Street",
+			"mod": "address",
+			"info": "Jl. Raya Surabaya 2787"
+		}
+	],
+
+	"inputs": [
+		{
+			"title": "Name",
+			"placeholder": "Input your name",
+			"type": "text"
+		},
+		{
+			"title": "Email",
+			"placeholder": "Input your email",
+			"type": "email"
+		},
+		{
+			"title": "Special Request",
+			"placeholder": "Input your special request",
+			"type": "textarea"
+		}
+	],
+	"btn": "Send",
+	"logo": "img/logo-dark.png",
+	"socials": [
+		"Fb",
+		"Ig",
+		"Tw",
+		"Yt"
+	]
+}

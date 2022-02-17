@@ -1,0 +1,13 @@
+@use '../abstracts/' as *;
+
+:root {
+	@each $colors, $shade in $colors {
+		@if (type-of($shade) == 'map') {
+			@each $color, $value in $shade {
+				--clr-#{$colors}-#{$color}: #{$value};
+			}
+		} @else {
+			--clr-#{$colors}: #{$shade};
+		}
+	}
+}

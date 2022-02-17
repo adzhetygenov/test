@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+// Px to Em Function
+@function em($pixels, $context: 16) {
+	@return #{math.div($pixels, $context)}em;
+}
